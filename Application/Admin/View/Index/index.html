@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+  <head>
+
+    <include file='Public:head'/>
+
+  </head>
+
+
+
+  <body style="overflow:-Scroll;overflow-y:hidden">
+
+
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="sidebar">
+
+          <div class="nav-user">
+
+              <div class="portrait">
+                <if condition="$userAvatar">
+                  <img src="__QINIU__{$userAvatar}">
+                <else>
+                  <img src="__MODULE__/images/portrait.jpg">
+                </if>
+              </div>
+
+              <div class="operate">
+
+                <a href="{:U('Home/User/index')}" target="_blank">
+
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+
+                </a>
+
+                <a href="{:U('Login/logout')}">
+
+                  <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+
+                </a>
+
+              </div>
+
+          </div>
+
+          <ul class="nav-sidebar">
+
+            <foreach name="nav" item="v">
+            <li>
+              <a href="javascript:void(0)" onclick="fold(this)">
+
+                <span class="glyphicon {$v.icon}" aria-hidden="true"></span>{$v.name}
+
+              </a>
+              <ul>
+                <foreach name="v.child" item="s">
+                <li><a href="{$s.price}"  target="iframe">{$s.name}</a></li>
+                </foreach>
+              </ul>
+
+            </li>
+            </foreach>
+
+          </ul>
+
+        </div>
+
+        <div id="main">
+
+          <iframe name="iframe" src="{:U('Rbac/user')}"></iframe>
+
+        </div>
+
+      </div>
+
+    </div>
+    <include file='Public:script'/>
+    <script>
+    // 案例详情页自适应
+
+		$(document).ready(function(){
+		  $(window).resize(function() {
+		    carousel();
+		  });
+		  carousel();
+		});
+		function carousel(){
+		  var widths = $(document.body).width()-190;
+		  $("#main").css({"width":widths+"px","margin-left":"190px"});
+		}
+
+    </script>
+
+  </body>
+
+</html>
+

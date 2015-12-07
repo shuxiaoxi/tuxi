@@ -1,0 +1,111 @@
+<!doctype html> 
+<html lang="zh-cn"> 
+<head> 
+	<title>冬青|素材站。</title>
+  <meta name="keywords" content="分享创意，助力数码师。">
+  <meta name="description" content="冬青|数码站，免费下载：婚纱摄影模板、儿童摄影模板、写真摄影模板。">
+  <include file='Public:head'/>
+</head> 
+<body style="background-color:#f1f1f1">
+<include file='Public:nav'/>
+  <div id="modify">
+    <div class="title">
+      <p>账号设置</p>
+    </div>
+    <ul>
+      <li>
+        <div class="name"><b>头像</b></div>
+        <div class="cont">
+          <if condition="$data['avatar']">
+              <img src="__QINIU__{$data.avatar}?imageView2/2/w/80/h/80" id="head">
+            <else/>
+              <img src="__MODULE__/image/test/name.jpg" id="head">
+          </if>
+          
+          <!--  -->
+          <a id="file" href="javascript:void(0)"  onclick="document.getElementById('upload').click()" >上传头像</a>
+          <input type="file" style="display:none;" id="upload" onchange="avatar_upload(this)" name="file">
+          <!-- <input type="file" name="file" /> -->
+        </div>
+        <div class="both"></div>
+      </li>
+      <li>
+        <div class="name"><b>昵称</b></div>
+        <div class="cont">
+          <input type="text" class="text" value="{$data.user_nicename}" id="user_nicename">
+          <a id="file" href="javascript:void(0)" onclick="update('user_nicename')">更改</a>
+        </div>
+        <div class="both"></div>
+      </li>
+      <li>
+        <div class="name"><b>个人签名</b></div>
+        <div class="cont">
+          <textarea rows="4" cols="30" class="text"   style="resize:none;" id="signature">{$data.signature}</textarea>
+          <a id="file" href="javascript:void(0)" onclick="update('signature')">更改</a>
+        </div>
+        <div class="both"></div>
+      </li>
+    </ul>
+  </div>
+<include file='Public:footer'/>
+<include file='Public:scripts'/>
+<script src="__MODULE__/js/ajaxfileupload.js"></script>
+<script>
+function avatar_upload(obj,genre){
+
+      //获取ID
+      var id =  $(obj).attr("id");
+
+       $.ajaxFileUpload({
+
+                            url:"{:U('User/ajax_login')}", //你处理上传文件的服务端
+
+                            secureuri:false,
+
+                            fileElementId:id,
+
+                            dataType: 'json',
+
+                            success: function (data)  //服务器成功响应处理函数
+
+                            {
+                              $("#head").attr("src","__QINIU__"+data['name']+"?imageView2/2/w/80/h/80");
+                            },
+                            error: function (data) {  
+                                alert(data);
+                            } 
+
+                        })
+
+                       return false;
+
+                 }
+// function avatar_upload(obj){
+//       //获取ID
+//       var id =  $(obj).attr("id");
+//        $.ajaxFileUpload({
+//                             url:"{:U('User/ajax_login')}", //你处理上传文件的服务端
+//                             secureuri:false,
+//                             fileElementId:id,
+//                             dataType: 'json',
+//                             success: function (data)  //服务器成功响应处理函数
+//                             {
+//                                 if(data['WebSite']=='1'){
+//                                   $("#head").attr("src","__UPLOADS__80_"+data['url']);
+//                                 }else{
+//                                   alert("失败");
+//                                 }
+//                             }
+//                         })
+//                        return false;
+//                  }
+// function update(data){
+//   var value = $("#"+data).val();
+//   $.get("{:U('User/update')}",{name:data,value:value},
+//             //返回的内容
+//         function(data){});
+//         return false;
+// }
+</script>
+</body> 
+</html> 

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <include file='Public:head'/>
+  </head>
+  <body style="padding:20px;">
+      <div class="content-title">
+        <div class="col-md-8">
+          <div class="btn-group">
+            <a class="btn btn-default" href="javascript:history.go(-1);" role="button">返回</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="输入用户的昵称">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Go!</button>
+            </span>
+          </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+      </div>
+      <div class="content-add">
+      <form class="form-horizontal" action="{:U('Rbac/addRoleHandle')}" method="post">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">角色名称</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" name="name" value="{$User['name']}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">角色描述</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" name="remark" value="{$User['remark']}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">是否开启</label>
+          <div class="col-sm-4">
+            <if condition="$User['remark']">
+                 <if condition="$User['status']">
+                  <input type="radio" name="status" value="1" checked="checked">&nbsp;开启&nbsp;
+                  <input type="radio" name="status" value="0">&nbsp;关闭&nbsp;
+                 <else/>
+                  <input type="radio" name="status" value="1">&nbsp;开启&nbsp;
+                  <input type="radio" name="status" value="0" checked="checked">&nbsp;关闭&nbsp;
+                 </if>
+            <else/>
+                <input type="radio" name="status" value="1" checked="checked">&nbsp;开启&nbsp;
+                <input type="radio" name="status" value="0">&nbsp;关闭&nbsp;
+            </if>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <if condition="$User['id']">
+              <input type="hidden" name="id" value="{$User['id']}">
+            </if>
+            <button type="submit" class="btn btn-info">保存添加</button>
+          </div>
+        </div>
+    </form>
+    </div>
+
+    
+  </body>
+  <include file='Public:script'/>
+</html>

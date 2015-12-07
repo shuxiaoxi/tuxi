@@ -1,0 +1,85 @@
+<!doctype html> 
+<html lang="zh-cn"> 
+<head> 
+	<title>冬青|素材站|{$data.photo_title}</title>
+  <meta name="keywords" content="{$data.photo_title}{$data.photo_size}影楼模板，婚纱模板，儿童写真模板，个人写真模板，相册模板，PSD模板，影楼素材下载，儿童模板下载，写真模板下载">
+  <meta name="description" content="{$data.photo_title}{$data.photo_size}">
+  <include file='Public:head'/>
+</head> 
+<body>
+<include file='Public:nav'/>
+<div class="both_40"></div>
+<div id="photo_page">
+  <div class="atlas">
+    <div class="image">
+          <span><img src="{$photo_atlas.0}"></span>
+    </div>
+    <div class="images">
+        <a class="photo_page_left" href="javascript:void(0)"><i class="iconfont">&#xe614;</i></a>
+        <a class="photo_page_right" href="javascript:void(0)"><i class="iconfont">&#xe617;</i></a>
+        <div class="vessel">
+            <div class="vessels">
+              <ul>
+                <foreach name="photo_atlas" item="v">
+                    <li>
+                      <a href="javascript:void(0)" onclick="photo_page(this,'{$v}');"><img src="{$v}?imageView2/2/h/100"></a>
+                    </li>
+                </foreach>
+              </ul>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="leave">
+  	<div class="details">
+	    <div class="photo_page_nav">
+	      <div class="photo_page_tab">
+	        <a href="javascript:void(0)" class="one">留言</a><a href="javascript:void(0)">提供者</a>
+	      </div>
+	    </div>
+	    <div class="photo_page_details">
+	    	<ul>
+		        <li style="display:none;">提供者</li>
+		        <li class="comments">
+		        	<form  action="{:u('Photo/discuss')}" method="post" class="page_word">
+		        	<div class="comments_frame">
+		        		<div class="comments_form">
+		        			<textarea name="details" placeholder="扯淡、吐槽、表扬、鼓励……想说啥就说啥！"></textarea>
+		        		</div>
+		        	</div>
+		        	<div class="comments_button">
+		        		<input type="hidden" name="photo_id" value="{$data.id}">
+		        		<button type="submit" class="button">发表评论</button>
+		        		<div class="both"></div>
+		        	</div>
+		        	</form>
+		        	<ul class="page_comment">
+		        	</ul>
+		        	<div class="page_paging">
+		        	</div>
+		        </li>
+	      </ul>
+	    </div>
+	</div>
+	<div class="choose">
+		<div class="behavior">
+			<!-- 下载 -->
+			<a href="#" id="popup_download" target="_blank"><i class="icon iconfont">&#xe609;</i>下载</a>
+		    <!-- 喜欢 -->
+		    <a href="javascript:void(0)" id="popup_praise" onclick="collect({$data.id},2,this,1)"><i class="icon iconfont">&#xe618;</i>喜欢</a>
+		    <!-- 收藏 -->
+		    <a href="javascript:void(0)" id="popup_collect" onclick="collect({$data.id},1,this,1)"><i class="icon iconfont">&#xe61a;</i>收藏</a>
+		</div>
+	</div>
+	<div class="both_40">
+	</div>
+  </div>
+</div>
+<include file='Public:footer'/>
+<include file='Public:scripts'/>
+<script>
+var Comments = <?php echo json_encode($Comment); ?>;
+</script>
+<script src="__MODULE__/js/photo_page.js" charset="utf-8"></script>
+</body> 
+</html> 

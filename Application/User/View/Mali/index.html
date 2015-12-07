@@ -1,0 +1,79 @@
+<!doctype html> 
+
+<html lang="zh-cn"> 
+
+<head> 
+
+	<title>冬青|素材站。</title>
+
+  <meta name="keywords" content="分享创意，助力数码师。">
+
+  <meta name="description" content="冬青|数码站，免费下载：婚纱摄影模板、儿童摄影模板、写真摄影模板。">
+
+  <include file='Public:head'/>
+
+</head> 
+
+<body>
+
+<include file='Public:nav'/>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="title"><b>恭喜您，成功注册成为图昔网会员！</b></div>
+      <div class="other">
+        <p>我们向您的邮箱<span>{$_SESSION['mail']}</span>发送了验证信息，马上去邮件验证邮箱，激活帐号！</p>
+        <p>没有收到验证邮件？</p>
+        <p><span>·</span>请尝试到广告，垃圾邮件里找一下看看。如果还是找不到，请<a href="javascript:void(0)" onclick="showFrom();">重新发送电子邮件</a></p>
+        <p><span>·</span>邮件地址写错了？<a href="javascript:void(0)" onclick="showFrom();">请更正您的邮箱</a></p>
+        <p><span>·</span>有任何问题请联系图昔网客服 shuning@tuxiwang.com</p>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- 弹出修改邮箱 -->
+  <div id="amend">
+    <a class="lining" href="javascript:void(0)" onclick="hideFrom()"></a>
+    <div class="menu">
+      <div id="modify">
+        <div class="title">
+          <p>密码更改</p>
+        </div>
+        <ul class="password">
+          <form method="post" action="{:U('User/')}" class="register">
+          <li>
+            <div class="name"><b>您的邮箱是 :</b></div>
+            <div class="cont">
+              <input type="text" class="text" name="original" id="original">
+            </div>
+            <div class="both"></div>
+          </li>
+          <li>
+            <button type="submit">提 交</button>
+          </li>
+          </form>
+        </ul>
+      </div>
+    </div>
+  </div>
+<include file='Public:footer'/>
+
+<include file='Public:scripts'/>
+
+<script src="__MODULE__/js/login.js"></script>
+
+<script language=javascript>
+function showFrom(){
+  $("#amend").show();
+}
+function hideFrom(){
+  $("#amend").hide();
+}
+
+</script>
+
+</body> 
+
+</html> 

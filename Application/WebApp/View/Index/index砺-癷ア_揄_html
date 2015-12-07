@@ -1,0 +1,161 @@
+<!doctype html> 
+<html lang="zh-cn"> 
+<head> 
+	<title>冬青|素材站。</title>
+  <meta name="keywords" content="影楼模板，婚纱模板，儿童写真，个人写真，相册模板，PSD模板，影楼素材下载，儿童模板下载，写真模板下载，衣服模板下载">
+  <meta name="description" content="冬青|数码站，免费下载：婚纱摄影模板、儿童摄影模板、写真摄影模板。">
+  <include file='Public:head'/>
+  <style>
+    /*首页*/
+body{  font-family:'Microsoft YaHei', arial, helvetica, sans-serif;}
+#index{background-color:#fff;}
+#index .index1 img{width:100%;display:block;}
+#index .index1 .title{width:100%;position:relative;}
+@font-face {font-family: 'webfont';
+  src: url('//at.alicdn.com/t/4gad6moj358f47vi.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/4gad6moj358f47vi.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/4gad6moj358f47vi.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/4gad6moj358f47vi.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/4gad6moj358f47vi.svg#思源黑体-极细') format('svg'); /* iOS 4.1- */
+}
+#index .font{text-align: center;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;}
+#index .index1 .title h2{font-size:60px;line-height:160px;color:#fff;}
+#index .index1 .title p{font-size:24px;color:#fff;}
+#index .index1 .title p span{margin:0 2px;}
+#index .index1 .title .text{position:absolute;top:30%;width:100%;text-align:center;}
+#index .index1 .title .below{color:#fff;position:relative;bottom:100px;font-size:42px;left:50%;margin-left:-21px;animation:mymove 2s infinite;
+-moz-animation:mymove 2s infinite; /* Firefox */
+-webkit-animation:mymove 2s infinite; /* Safari and Chrome */
+-o-animation:mymove 2s infinite; /* Opera */}
+@keyframes mymove
+{
+0%   {bottom:50px;}
+50%  {bottom:80px;}
+100% {bottom:50px;}
+}
+
+@-moz-keyframes mymove /* Firefox */
+{
+0%   {bottom:50px;}
+50%  {bottom:80px;}
+100% {bottom:50px;}
+}
+
+@-webkit-keyframes mymove /* Safari and Chrome */
+{
+0%   {bottom:50px;}
+50%  {bottom:80px;}
+100% {bottom:50px;}
+}
+
+@-o-keyframes mymove /* Opera */
+{
+0%   {bottom:50px;}
+50%  {bottom:80px;}
+100% {bottom:50px;}
+}
+#index .index1 .title .below i{font-size:42px;}
+#index .index1 .title .Avatar{top:20%;}
+#index .index1 .title .Avatar a{width:138px;height:138px;display:inline-block;border-radius:77px;overflow:hidden;border:8px solid #6e6c6c;}
+#index .index1 .title .Avatar p{font-size:16px;}
+#index .index1 .title .Avatar p span{font-size:22px;line-height:48px;}
+#index .index2{padding-bottom:100px;}
+#index .index2 .title{padding-top:50px;}
+#index .index2 .title h2{font-size:38px;line-height:38px;color:#3e3e3e;margin-bottom:30px;}
+#index .index2 .title p{color:#444444;text-align: center;font-size:16px;max-width:1000px;margin:0 auto;}
+#index .index2 .title img{margin-top:60px;width:100%;}
+#index .index2 .kind{width:1200px;margin:auto;margin-top:50px;}
+#index .index2 .kind .page{width:300px;padding:10px 50px;float:left;height:260px;}
+#index .index2 .kind .page_img{width:360px;float:left;height:260px;margin:0 20px;}
+#index .index2 .kind .page_img a{display:inline-block;width:100%;}
+#index .index2 .kind .page_img a img{width:100%;display:block;border:0px solid #f66;transition: width 0.2s,border 0.2s;-moz-transition: width 0.2s,border 0.2s;-webkit-transition: width 0.2s,border 0.2s;-o-transition: width 0.2s,border 0.2s;}
+#index .index2 .kind .page_img a img:hover{width:340px;border:10px solid #f66;}
+#index .index2 .kind .page p{text-align: center;}
+#index .index2 .kind .page p .quantity{height:100px;width:100px;display: inline-block;border-radius:50px;font-size:48px;color:#fff;line-height: 100px;margin-top:30px;}
+#index .index2 .kind .page p .quantity .icon{font-size:74px;}
+#index .index2 .kind .page p .title{font-size:24px;color:#2a2a2a;line-height: 42px;color:#fff;}
+#index .index2 .kind .page .text{padding:0;line-height: 24px;color:#fff;}
+@media only screen and (max-width: 1366px) {
+    #index .index1 .title .Avatar{top:5%;}
+    #index .index1 .title h2{font-size:50px;line-height:120px;color:#fff;}
+    #index .index1 .title .Avatar p{font-size:14px;}
+}
+  </style>
+}
+</head> 
+<body id="index">
+<include file='Public:nav'/>
+<div class="index1">
+  <div class="title">
+    <img src="__MODULE__/image/mate/index_bander_dong.jpg">
+    <div class="text">
+      <h2 class="font">《冬青•工作室》</h2>
+      <p class="font">专业的影楼互联网解决方案,提供商。</p>
+    </div>
+    <a class="below"><i class="icon iconfont">&#xe61e;</i></a>
+  </div>
+</div>
+<div class="index2">
+  <div class="title">
+    <h2 class="font">《解决方案》</h2>
+    <p class="font">我们要做，影楼最专业互联网解决方案提供商，整合：移动端、PC端、微信端，全覆盖式解决方案。</p>
+  </div>
+  <div class="kind">
+    <div class="page slide" style="background-color:#1aa1c0" data-rotate-x="90deg" data-move-z="-500px" data-move-y="-200px">
+      <p><a href="#" class="quantity"><i class="icon iconfont">&#xe60d;</i></a></p>
+      <p><a href="#" class="title">PC端</a></p>
+      <p class="text">针对影楼类网站提供专业的网络优化，<br/>提示响应与打开速度。</p>
+    </div>
+    <div class="page slide" style="background-color:#ff6666" data-rotate-x="90deg" data-move-z="-500px" data-move-y="0px">
+      <p><a href="#" class="quantity"><i class="icon iconfont">&#xe61c;</i></a></p>
+      <p><a href="#" class="title">移动端</a></p>
+      <p class="text">用户可通过手机，平板。<br/>
+随时、随地、随身了解影楼最新的信息。</p>
+    </div>
+    <div class="page slide" style="background-color:#48cc83" data-rotate-x="90deg" data-move-z="-500px" data-move-y="200px">
+      <p><a href="#" class="quantity"><i class="icon iconfont">&#xe61d;</i></a></p>
+      <p><a href="#" class="title">微网站</a></p>
+      <p class="text">帮助银楼快速实现全新的公众号服务平台。<br/>
+一个包罗万象的操作平台</p>
+    </div>
+    <div class="both"></div>
+  </div>
+</div>
+<div class="index1">
+  <div class="title">
+    <img src="__MODULE__/image/mate/index_barder_map.png">
+    <div class="text Avatar">
+      <h2 class="font slide" style="color:#f66" data-move-x="10%">《找到我》</h2>
+      <a class="font slide"  data-move-x="-20%"><img src="__MODULE__/image/mate/Avatar.png" ></a>
+      <p class="font slide"><span>「 舒宁 」</span><br/>热爱设计，热爱程序，追求完美，以工匠之心打造精品。<br/>
+冬青专注于影楼类企业的互联网解决方案,为提升影楼品牌价值和宣传力度而努力。</p>
+    </div>
+  </div>
+</div>
+<div class="index2" style="background-color:#eaeaeb">
+  <div class="title">
+    <h2 class="font slide">精选案例 / Our Case</h2>
+    <p class="font slide">我们要做，影楼最专业互联网解决方案提供商，整合：移动端、PC端、微信端，全覆盖式解决方案。</p>
+  </div>
+  <div class="kind">
+    <div class="page_img slide" data-move-y="200px" data-move-x="-200px" data-rotate="-45deg">
+      <a href="http://www.wcphoto.cn/index.php" target="_blank"><img src="__MODULE__/image/mate/case_1.png"></a>
+    </div>
+    <div class="page_img slide" data-move-y="200px" data-move-x="0px" data-rotate="-45deg">
+      <a href="http://www.kljstn.com/" target="_blank"><img src="__MODULE__/image/mate/case_3.png"></a>
+    </div>
+    <div class="page_img slide" data-move-y="200px" data-move-x="200px" data-rotate="-45deg">
+      <a href="http://www.cdshijue.com/#qipaoxian" target="_blank"><img src="__MODULE__/image/mate/case_2.png"></a>
+    </div>
+    <div class="both"></div>
+  </div>
+</div>
+<include file='Public:footer'/>
+<include file='Public:scripts'/>
+<script src="__MODULE__/js/jquery.smoove.min.js" charset="utf-8"></script>
+<script type="text/javascript">$('.slide').smoove({offset:'20%'});</script>
+</body> 
+</html> 

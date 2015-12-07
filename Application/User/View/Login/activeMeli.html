@@ -1,0 +1,207 @@
+<!doctype html> 
+
+<html lang="zh-cn"> 
+
+<head> 
+
+	<title>冬青|素材站。</title>
+
+  <meta name="keywords" content="分享创意，助力数码师。">
+
+  <meta name="description" content="冬青|数码站，免费下载：婚纱摄影模板、儿童摄影模板、写真摄影模板。">
+
+  <include file='Public:head'/>
+
+</head> 
+
+<body>
+
+<include file='Public:nav'/>
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="">
+
+        <div class="title"><b>恭喜您，成功注册成为图昔网会员！</b></div>
+
+        <p>我们向您的邮箱<span>{$user[0]['user_email']}</span>发送了验证信息，马上去邮件验证邮箱，激活帐号！</p>
+        <p><input type="text" id="username" name="username" placeholder="验证码"><A>验证</A></p>
+        <p class="submit"><a href="http://www.{$www['1']}">去邮箱激活您的账号</a></p>
+        <p>没有收到验证邮件？</p>
+        <p><span>·</span>请尝试到广告，垃圾邮件里找一下看看。如果还是找不到，请<a href="javascript:void(0)" onclick="triumph();">重新发送电子邮件</a></p>
+        <p><span>·</span>邮件地址写错了？<a href="javascript:void(0)" onclick="anew();">请更正您的邮箱</a></p>
+        <p><span>·</span>有任何问题请联系图昔网客服 shuning@tuxiwang.com</p>
+      </div>
+
+    </div>
+
+  </div>
+
+<include file='Public:footer'/>
+
+<include file='Public:scripts'/>
+
+<script src="__MODULE__/js/login.js"></script>
+
+<script language=javascript>
+
+
+
+    // JavaScript 判断表单
+
+  $(document).ready(function(){
+
+      
+
+    $("form :input").blur(function(){
+
+      $(this).parent().find(".error").remove();
+
+      //邮箱验证  
+      if ($(this).is("#username")){
+
+        
+
+        if (this.value==""){
+
+          
+
+          
+
+          $(this).parent().append("<p class='error'>4-20位字符，支持汉字，字母，数字及“-”,“_”组合</p>");
+
+          $('#send').attr("disabled","disabled");
+
+          }else{
+
+
+
+          $("#send").removeAttr('disabled');        
+
+        }
+
+
+
+      }
+
+      var pattern = /^([\.a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;  
+
+      if ($(this).is("#mail")){
+
+        
+
+        if (this.value=="" ||  !pattern.test(this.value)){
+
+          
+
+          
+
+          $(this).parent().append("<p class='error'>请输入正确的邮箱</p>");
+
+          $('#send').attr("disabled","disabled");
+
+          }else{
+
+
+
+          $("#send").removeAttr('disabled');        
+
+        }
+
+
+
+      }
+
+      //密码
+
+      if ($(this).is("#cpassword")){
+
+        if (this.value=="" || this.value.length > 16 || this.value.length < 6 || this.value!= $("#password").val()){
+
+          
+
+          $(this).parent().append("<p class='error error_suer'>密码有误</p>");
+
+          }else{
+
+            $(this).next().remove();
+
+          }
+
+      }
+
+    }); 
+
+    //注册
+
+    $("form.register").submit( function () {
+
+      
+
+      $("form :input").trigger("blur");
+
+      
+
+      var hdw3 = $(".error").length; 
+
+      
+
+      if (hdw3){
+
+        return false;
+
+        
+
+        }else{;
+
+            //账号
+
+            var username = $("#username").val();
+
+            //密码
+
+            var mail = $("#mail").val();
+            //密码
+            var password = $("#password").val();
+
+            //     //提交地址
+
+            $.get(this.action,
+
+                //提交内容
+
+            {username:username,password:password,mail:mail},
+
+                //返回的内容
+
+            function(data){
+
+                if(data['status']){
+
+                  window.location.href=data['url'];
+
+                }else{
+
+                  mistake(data['info']);
+
+                }
+
+            });
+
+            return false;
+
+        } 
+
+  
+
+    });
+
+  }); 
+
+</script>
+
+</body> 
+
+</html> 

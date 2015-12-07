@@ -1,0 +1,20 @@
+.trumbowyg-box{display:block;position:relative;border:1px solid #DDD;min-height:150px;margin:0;}
+.trumbowyg-overlay{display:none;}
+.trumbowyg-textarea{position:relative;display:block;overflow:auto;border:none;white-space:normal}
+.trumbowyg-editor{position:relative;padding:1% 2%;min-height:150px;border-style:none;resize:none;outline:none}
+.trumbowyg-button-pane{position:relative;width:100%;background:#ecf0f1;border-bottom:1px solid #d7e0e2;margin:0;padding:0;list-style-type:none;line-height:10px;height:35px;}
+.trumbowyg-button-pane li{display:inline-block;text-align:center;overflow:hidden}
+.trumbowyg-button-pane li:first-child button{margin-left:6px}
+.trumbowyg-button-pane li button{display:block;position:relative;text-indent:-9999px;width:35px;height:35px;overflow:hidden;background:transparent url('../images/icons-sa75ce98b2b.png') no-repeat;border:none;cursor:pointer;-moz-transition:all 0.15s;-o-transition:all 0.15s;-webkit-transition:all 0.15s;transition:all 0.15s;transition:background-color .15s, background-image .15s, opacity .15s}
+.trumbowyg-button-pane li button.trumbowyg-justifyRight-button{background-position:5px -395px}
+.trumbowyg-button-pane li button.trumbowyg-justifyCenter-button{background-position:5px -70px}
+.trumbowyg-button-pane li button.trumbowyg-justifyLeft-button{background-position:5px -320px}
+.trumbowyg-button-pane li button.trumbowyg-blockquote-button{background-position:5px -70px}
+.trumbowyg-button-pane li button.trumbowyg-p-button{background-position:5px -243px}
+.trumbowyg-button-pane li button.trumbowyg-h1-button{background-position:5px -120px}
+.trumbowyg-button-pane li button.trumbowyg-h2-button{background-position:5px -145px}
+.trumbowyg-button-pane li button.trumbowyg-h3-button{background-position:5px -170px}
+.trumbowyg-button-pane li:last-child button{display:none;}
+.trumbowyg-button-pane li button.trumbowyg-formatting-button{background-position:5px -120px}
+.trumbowyg-button-pane:not(.trumbowyg-disable) li button:hover,.trumbowyg-button-pane:not(.trumbowyg-disable) li button:focus,.t.trumbowyg-button-pane li buttonrumbowyg-active,.trumbowyg-button-pane li.trumbowyg-not-disable button:hover,.trumbowyg-button-pane li.trumbowyg-not-disable button:focus{background-color:#FFF;outline:none}
+.trumbowyg-button-pane li.trumbowyg-separator{width:1px;background:#d7e0e2;margin:0px;height:35px}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <include file='Public:head'/>
+  </head>
+  <body style="padding:20px;">
+      <div class="content-add">
+      <form class="form-horizontal" action="{:U('Set/altSet')}" method="post">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">分类名称</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" name="name" value="{$data.name}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">值/连接地址</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" name="price" value="{$data.price}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">图标</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" name="icon" value="{$data.icon}">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <input type="hidden"  name="type" value="{$data['type']}"/>
+            <input type="hidden"  name="pid" value="{$data['pid']}"/>
+            <input type="hidden"  name="id" value="{$data['id']}"/>
+            <button type="submit" class="btn btn-info">保存添加</button>
+          </div>
+        </div>
+    </form>
+    </div>
+
+    
+  </body>
+  <include file='Public:script'/>
+</html>

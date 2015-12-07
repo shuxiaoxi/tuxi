@@ -1,0 +1,127 @@
+<!doctype html> 
+<html lang="zh-cn"> 
+<head> 
+	<title>冬青|素材站。</title>
+  <meta name="keywords" content="影楼模板，婚纱模板，儿童写真，个人写真，相册模板，PSD模板，影楼素材下载，儿童模板下载，写真模板下载，衣服模板下载">
+  <meta name="description" content="冬青|数码站，免费下载：婚纱摄影模板、儿童摄影模板、写真摄影模板。">
+  <include file='Public:head'/>
+  <style>
+    /*首页*/
+#index{background-color:#fff;}
+#index .index1 img{width:100%;}
+#index .index1 .title{width:100%;position:relative;}
+@font-face {font-family: 'webfont';
+  src: url('//at.alicdn.com/t/4gad6moj358f47vi.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/4gad6moj358f47vi.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/4gad6moj358f47vi.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/4gad6moj358f47vi.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/4gad6moj358f47vi.svg#思源黑体-极细') format('svg'); /* iOS 4.1- */
+}
+#index .font{font-family:"webfont" !important;text-align: center;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;}
+#index .index1 .title h2{font-size:80px;height:80px;color:#fff;}
+#index .index1 .title p{font-size:24px;color:#fff;}
+#index .index1 .title p span{margin:0 2px;}
+#index .index1 .title .text{position:absolute;top:50%;width:100%;text-align:center;}
+
+#index .index2 .title{padding-top:50px;}
+#index .index2 .title h2{font-size:38px;height:38px;color:#3e3e3e;margin-bottom:10px;}
+#index .index2 .title p{color:#444444;text-align: center;font-size:16px;max-width:1000px;margin:0 auto;}
+#index .index2 .title img{margin-top:60px;width:100%;}
+#index .index2 .kind{width:1000px;margin:auto;margin-top:50px;}
+#index .index2 .kind .page{width:400px;padding:10px 50px;float:left;height:260px;}
+#index .index2 .kind .page p{text-align: center;}
+#index .index2 .kind .page p .quantity{height:100px;width:100px;display: inline-block;border-radius:50px;font-size:48px;color:#fff;line-height: 100px;}
+#index .index2 .kind .page p .quantity .icon{font-size:60px;}
+#index .index2 .kind .page p .title{font-size:24px;color:#2a2a2a;line-height: 72px;}
+#index .index2 .kind .page .text{padding:0 50px;line-height: 24px;}
+  </style>
+</head> 
+<body id="index">
+<include file='Public:nav'/>
+<div class="index1">
+  <div class="title">
+    <img src="__MODULE__/image/mate/index_bander.png">
+    <div class="text">
+      <h2 class="font">冬 青</h2>
+      <p class="font "><span>时</span><span>光</span><span>不</span><span>老</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>我</span><span>们</span><span>不</span><span>散</span></p>
+    </div>
+  </div>
+</div>
+<div class="index2">
+  <div class="title">
+    <h2 class="font">周一更新</h2>
+    <p class="font">每周的周一会更新至少40套作品，包括婚纱，儿童，及写真三大类。</p>
+    <p class="font">让您时时刻刻跟上潮流。</p>
+    <p><img src="__MODULE__/image/mate/index_bander_2.png"></p>
+  </div>
+  <div class="kind">
+    <div class="page">
+      <p><a href="#" class="quantity" style="background-color:#73a8de">278</a></p>
+      <p><a href="#" class="title">婚纱模板278套</a></p>
+      <p class="text">精选行业中最方便，快捷，美观的点缀，灵活，拼凑出自己风格的模板。</p>
+    </div>
+    <div class="page">
+      <p><a href="#" class="quantity" style="background-color:#b385bd">326</a></p>
+      <p><a href="#" class="title">儿童模板326套</a></p>
+      <p class="text">精选行业中最方便，快捷，美观的点缀，灵活，拼凑出自己风格的模板。</p>
+    </div>
+    <div class="page">
+      <p><a href="#" class="quantity" style="background-color:#73d0de">285</a></p>
+      <p><a href="#" class="title">写真模板165套</a></p>
+      <p class="text">精选行业中最方便，快捷，美观的点缀，灵活，拼凑出自己风格的模板。</p>
+    </div>
+    <div class="page">
+      <p><a href="#" class="quantity" style="background-color:#8cbd85">854</a></p>
+      <p><a href="#" class="title">点缀865个</a></p>
+      <p class="text">精选行业中最方便，快捷，美观的点缀，灵活，拼凑出自己风格的模板。</p>
+    </div>
+    <div class="both"></div>
+    </div>
+  </div>
+</div>
+<div class="index2" style="background-color:#f7f7f7;">
+  <div class="title">
+    <h2 class="font">快捷的查询方式</h2>
+    <p class="font">相册查询，单张查询，风格查询，三大类查询，色系查询，使用照片数量查询。</p>
+    <p class="font">方便的查询方式，让您的工作高效率。</p>
+    <p style="max-width:1300px;"><img src="__MODULE__/image/mate/index_bander_3.png"></p>
+  </div>
+  <div class="kind">
+    <div class="page">
+      <p><a class="quantity" style="background-color:#6666FF"><i class="icon iconfont">&#xe607;</i></a></p>
+      <p><a class="title">三大类</a></p>
+      <p class="text">精选行业中最方便，快捷，美观的点缀，灵活，拼凑出自己风格的模板。</p>
+    </div>
+    <div class="page">
+      <p><a class="quantity" style="background-color:#99CC00"><i class="icon iconfont">&#xe604;</i></a></p>
+      <p><a class="title">颜色</a></p>
+      <p class="text">精选行业中最方便，快捷，美观的点缀，灵活，拼凑出自己风格的模板。</p>
+    </div>
+    <div class="page">
+      <p><a class="quantity" style="background-color:#FF0033"><i class="icon iconfont">&#xe606;</i></a></p>
+      <p><a class="title">风格</a></p>
+      <p class="text">精选行业中最方便，快捷，美观的点缀，灵活，拼凑出自己风格的模板。</p>
+    </div>
+    <div class="page">
+      <p><a class="quantity" style="background-color:#FF9900"><i class="icon iconfont">&#xe605;</i></a></p>
+      <p><a class="title">使用照片数量</a></p>
+      <p class="text">精选行业中最方便，快捷，美观的点缀，灵活，拼凑出自己风格的模板。</p>
+    </div>
+    <div class="both"></div>
+    </div>
+</div>
+<div class="index2">
+  <div class="title">
+    <h2 class="font">实用的用户个人管理面板</h2>
+    <p class="font">收藏，关注，展示，下载，交流，在为您工作增加便利性的同时，也让您的工作更加有趣。</p>
+    <p class="font">改变您的工作方式从这里开始。</p>
+    <p style="max-width:1300px;"><img src="__MODULE__/image/mate/index_bander_3.png"></p>
+  </div>
+</div>
+<include file='Public:footer'/>
+<include file='Public:scripts'/>
+</body> 
+</html> 

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+  <head>
+
+    <include file='Public:head'/>
+
+  </head>
+
+  <body style="padding:20px;">
+
+      <!-- Single button -->
+
+      <div class="content-title">
+
+        <div class="col-md-8">
+
+            <a class="btn btn-success" href="{:U('Pay/create',array('deadline'=>1))}" role="button">
+            	<span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> 生成（1年）
+            </a>
+				
+            <a class="btn btn-success" href="{:U('Pay/create',array('deadline'=>2))}" role="button">
+            	<span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> 生成（永久）
+            </a>
+
+            <a class="btn btn-info" href="{:U('Pay/export',array('deadline'=>1))}" role="button">
+            	<span class="glyphicon glyphicon-save-file" aria-hidden="true"></span> 导出（1年）
+            </a>
+
+            <a class="btn btn-info" href="{:U('Pay/export',array('deadline'=>2))}" role="button">
+            	<span class="glyphicon glyphicon-save-file" aria-hidden="true"></span> 导出（永久）
+            </a>
+
+        </div>
+
+        <!-- <div class="col-md-4">
+
+          <div class="input-group">
+
+            <input type="text" class="form-control" placeholder="输入用户的昵称">
+
+            <span class="input-group-btn">
+
+              <button class="btn btn-default" type="button">Go!</button>
+
+            </span>
+
+          </div><!-- /input-group -->
+
+        <!-- </div> -->
+
+      </div>
+
+
+      <div class="">
+        <foreach name="data" item="v">
+          {$v.code}<br/>
+        </foreach>
+      </div>
+    
+
+  </body>
+
+  <include file='Public:script'/>
+
+</html>

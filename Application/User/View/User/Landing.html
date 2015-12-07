@@ -1,0 +1,201 @@
+<!doctype html> 
+
+<html lang="zh-cn"> 
+
+<head> 
+
+	<title>冬青|素材站。</title>
+
+  <meta name="keywords" content="分享创意，助力数码师。">
+
+  <meta name="description" content="冬青|数码站，免费下载：婚纱摄影模板、儿童摄影模板、写真摄影模板。">
+
+  <include file='Public:head'/>
+
+</head> 
+
+<body>
+
+<div id="nav">
+
+  <div class="nav">
+
+    <div class="content">
+
+      <div class="login">
+
+        <a href="{:U('Index/index')}"><img src="__MODULE__/image/LOGO.png"></a>
+
+      </div>
+
+      <div class="app">
+
+        <!-- <a href="{:U('Index/index')}">新瓣</a> -->
+
+        <a href="{:U('Photo/index')}">最新模板</a>
+
+        <div class="kind" id="navigation_hover">
+          <a href="javascript:void(0)"><i class="icon iconfont">&#xe602;</i></a>
+
+          <div class="navigation">
+
+            <div class="arrows">
+
+              <img src="__MODULE__/image/mate/menu_arrow.png">
+
+            </div>
+
+            <div class="content">
+
+              <div class="page">
+
+                <div class="title">
+
+                  <p><b>最新</b></p>
+
+                </div>
+
+                <div class="button">
+
+                  <p>
+
+                    <a href="{:U('Photo/index',array('id'=>1))}">婚纱</a>
+
+                    <a href="{:U('Photo/index',array('id'=>2))}">儿童</a>
+
+                    <a href="{:U('Photo/index',array('id'=>3))}">写真</a>
+
+                  </p>
+
+                </div>
+
+              </div>
+
+              <div class="page">
+
+                <div class="title">
+
+                  <p><b>风格</b></p>
+
+                </div>
+
+                <div class="button">
+
+                  <p>
+
+
+
+                    <foreach name="label" item="v">
+
+                      <a href="{:U('Photo/index',array('photo_style'=>$v['label_name'],'id'=>$_GET['id']))}">{$v.label_name}</a>
+
+                    </foreach>
+
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="user">
+
+          <a href="{:U('User/login')}">注册</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- 错误提示框 -->
+
+<div class="error_message">
+
+  </div>
+
+</div>
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="">
+
+        <div class="title"><b>登陆</b></div>
+        <div class="box">
+        <form  action="{:U('User/debark')}" method="post" class="login">
+
+
+
+            <div class="control-group">
+
+              <label for="mobile">账号</label>
+
+              <div class="controls">
+
+                <input type="username" name="username" id="login_username" placeholder="请输入用户名或者邮箱">
+
+              </div>
+
+            </div>
+
+            <div class="control-group">
+
+              <label for="password">密码</label>
+
+              <div class="controls">
+
+                <input type="password" name="password" id="login_password" placeholder="请输入密码">
+              </div>
+
+            </div>
+
+            
+            <div class="submit">
+
+              <button type="submit" id="submit">提交</button>
+
+            </div>
+
+
+        </form>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="unite">
+
+      <!-- <div class="title"><b>或使用以下帐号直接登录</b></div> -->
+
+      <ul class="unite">
+
+        <!-- <li><img src="__TMPL__Public/images/unite_microblog.jpg"></li>
+
+        <li><img src="__TMPL__Public/images/unite_qq.jpg"></li>
+
+        <li><img src="__TMPL__Public/images/unite_wechat.jpg"></li> -->
+
+      </ul>
+
+    </div>
+
+    <div class="both"></div>
+
+  </div>
+
+<include file='Public:footer'/>
+
+<include file='Public:scripts'/>
+</body> 
+
+</html> 

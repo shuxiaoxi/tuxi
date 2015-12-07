@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <include file='Public:head'/>
+  </head>
+  <body style="padding:20px;">
+      <!-- Single button -->
+      <div class="content-title">
+        <div class="col-md-8">
+          <div class="btn-group">
+              <a href="{:U('Set/Add',array('type'=>$_GET[type],'pid'=>0))}" class="btn btn-default">添加</a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="content-table">
+		<form class="form-horizontal" action="{:U('Set/sortSet')}" method="post">
+        <table class="table table-condensed">
+		
+          <thead>
+
+            <tr>
+
+              <th>名称</th>
+
+              <th>值</th>
+
+              <th width="220">排序</th>
+
+              <th width="320">操作</th>
+
+            </tr>
+
+          </thead>
+
+          
+			
+            <foreach name="set" item="v">
+            <div class="">
+            	<tbody>
+		            <tr class="active">
+		                <th>{$v.html}{$v.name}</th>
+		                <th>{$v.price}</th>
+		                <th style="width:auto;"><input type="text" class="form-control" name="{$v.id}" value="{$v.sort}"></th>
+		                <th>
+							<a class="btn btn-default" href="{:U('Set/Add',array('type'=>$v['type'],'pid'=>$v['id']))}" role="button">添加子分类</a>
+		                  	<a class="btn btn-default" href="{:U('Set/amendSet',array('id'=>$v['id']))}" role="button">修改</a>
+		                  	<a class="btn btn-default" href="javascript:void(0)"  onclick="hint('是否删除此分类以及子分类',{$v.id},'Set',1)" role="button">删除</a>
+		                </th>
+		            </tr>
+	            </tbody>
+	            <tbody>
+	            <foreach name="v[child]" item="s">
+	              		<tr class="foldson">
+			                <th>-----{$s.name}</th>
+			                <th>{$s.price}</th>
+			                <th style="width:auto;"><input type="text" class="form-control" name="{$s.id}" value="{$s.sort}"></th>
+			                <th>
+			                  	<a class="btn btn-default" href="{:U('Set/amendSet',array('id'=>$s['id']))}" role="button">修改</a>
+			                  	<a class="btn btn-default" href="javascript:void(0)" onclick="hint('是否删除此分类',{$s.id},'Set',0)" role="button">删除</a>
+			                </th>
+		              	</tr>
+
+	             </foreach>
+	             </tbody>
+	         </div>
+            </foreach>
+           
+            	<tbody>
+		            <tr>
+		              <th></th>
+		              <th><input type="hidden"  name="type" value="{$_GET['type']}"/></th>
+		              <th><button type="submit" class="btn btn-info">排序</button></th>
+		              <th></th>
+		            </tr>
+		        </tbody>
+           
+
+          
+
+        </table>
+		</form>
+      </div>
+
+    	<include file='Public:hint'/>
+  </body>
+  <include file='Public:script'/>
+</html>

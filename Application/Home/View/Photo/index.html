@@ -1,0 +1,281 @@
+<!doctype html> 
+
+<html lang="zh-cn"> 
+
+<head> 
+
+	<title>冬青|素材站。</title>
+  <meta name="baidu-site-verification" content="nFApCGpVo0" />
+  <meta name="keywords" content="影楼模板，婚纱模板，儿童写真模板，个人写真模板，相册模板，PSD模板，影楼素材下载，儿童模板下载，写真模板下载，衣服模板下载">
+
+  <meta name="description" content="冬青|数码站，影楼模板下载：儿童摄影模板、写真摄影模板。">
+
+  <include file='Public:head'/>
+
+</head> 
+
+<body>
+
+<include file='Public:nav'/>
+
+<div id="layer">
+
+  <div class="content normal">
+
+    <div class="left">
+
+      <a class='btnLeft' id="btnLeft" href="javascript:void(0);"><i class="iconfont">&#xe614;</i></a>
+
+      <a class='btnRight' id="btnRight" href="javascript:void(0);"><i class="iconfont">&#xe617;</i></a>
+
+      <div class="img">
+
+      </div>
+
+    </div>
+
+    <div class="right">
+
+    <div class="del_button">
+      <!-- 删除 -->
+      <a href="javascript:void(0)" onclick="blacken()"><i class="icon iconfont">&#xe610;</i></a>
+
+      <!-- 收藏 -->
+      <a href="javascript:void(0)" id="popup_collect"><i class="icon iconfont">&#xe61a;</i></a>
+      
+      <!-- 喜欢 -->
+      <a href="javascript:void(0)" id="popup_praise"><i class="icon iconfont">&#xe618;</i></a>
+
+      <!-- 下载 -->
+      <a href="#" id="popup_download" target="_blank"><i class="icon iconfont">&#xe609;</i></a>
+
+      
+    </div>
+
+      <div class="title">
+
+        <h2>title</h2>
+
+        <div class="referral">介绍</div>
+
+      </div>
+
+      <div class="list">
+      </div>
+      
+    </div>
+
+  </div>
+
+</div>
+<div class="introduction">
+</div>
+<div id="bander_photo">
+    <div class="box">
+        <div class="screen">
+        	<a href="javascript:void(0);" data-id="screen_1">
+        		<i class="iconfont">&#xe616;</i><span>尺寸</span>
+	        		<foreach name="screen" item="v" key="k">
+			          <if condition="$v[name]==尺寸">
+			            <foreach name="v.child" item="s">
+			              <span class="selected"><if condition="$s[price] == $demand[size]"> : {$s.name}</if></span>
+			            </foreach>
+			          </if>
+	          		</foreach>
+        		<i class="iconfont">&#xe61e;</i>
+        	</a>
+        	|
+        	<a href="javascript:void(0);" data-id="screen_2">
+        		<i class="iconfont">&#xe615;</i><span>分类</span>
+        			<foreach name="screen" item="v" key="k">
+			          <if condition="$v[name]==分类">
+			            <foreach name="v.child" item="s">
+			              <span class="selected"><if condition="$s[price] == $demand[genre]"> : {$s.name}</if></span>
+			            </foreach>
+			          </if>
+	          		</foreach>
+        		<i class="iconfont">&#xe61e;</i>
+        	</a>
+        	|
+        	<a href="javascript:void(0);" data-id="screen_3">
+        		<i class="iconfont">&#xe613;</i><span>板式</span>
+        			<foreach name="screen" item="v" key="k">
+			          <if condition="$v[name]==板式">
+			            <foreach name="v.child" item="s">
+			              <span class="selected"><if condition="$s[name] == $demand[format]"> : {$s.name}</if></span>
+			            </foreach>
+			          </if>
+	          		</foreach>
+        		<i class="iconfont">&#xe61e;</i>
+        	</a>
+        	|
+        	<a href="javascript:void(0);" data-id="screen_4">
+        		<i class="iconfont">&#xe622;</i><span>排序</span>
+        			<foreach name="screen" item="v" key="k">
+			          <if condition="$v[name]==排序">
+			            <foreach name="v.child" item="s">
+			              <span class="selected"><if condition="$s[price] == $demand[rank]"> : {$s.name}</if></span>
+			            </foreach>
+			          </if>
+	          		</foreach>
+        		<i class="iconfont">&#xe61e;</i>
+        	</a>
+        </div>
+    </div>
+    <div class="elects">
+    	<foreach name="screen" item="v" key="k">
+          <if condition="$v[name]==尺寸">
+          	<div class="elect" id="screen_1">
+	          <ul>
+	            <foreach name="v.child" item="s">
+	              <li><a <if condition="$s[price] == $demand[size]">class="selected"</if> <if condition="$s[price] == 'all' && $demand[size]==''">class="selected"</if>href="{:U('Photo/index',array('genre'=>$demand['genre'],'format'=>$demand['format'],'rank'=>$demand['rank'],'size'=>$s['price']))}">{$s.name}</a></li>
+	            </foreach>
+	          </ul>
+	        </div>
+          </if>
+          <if condition="$v[name]==分类">
+          	<div class="elect" id="screen_2">
+	            <ul>
+		            <foreach name="v.child" item="s">
+		              <li><a <if condition="$s[price] == $demand[genre]">class="selected"</if> <if condition="$s[price] == '0.4' && $demand[genre]==''">class="selected"</if>href="{:U('Photo/index',array('genre'=>$s['price'],'format'=>$demand['format'],'rank'=>$demand['rank'],'size'=>$demand['size']))}">{$s.name}</a></li>
+		            </foreach>
+	          	</ul>
+			</div>
+          </if>
+          <if condition="$v[name]==板式">
+	        <div class="elect" id="screen_3">
+	            <ul>
+		            <foreach name="v.child" item="s">
+		              <li><a <if condition="$s[name] == $demand[format]">class="selected"</if> <if condition="$s[name] == '全部' && $demand[format]==''">class="selected"</if>href="{:U('Photo/index',array('genre'=>$demand['genre'],'format'=>$s['name'],'rank'=>$demand['rank'],'size'=>$demand['size']))}">{$s.name}</a></li>
+		            </foreach>
+	          	</ul>
+	        </div>
+          </if>
+          <if condition="$v[name]==排序">
+          	<div class="elect" id="screen_4">
+	            <ul>
+		            <foreach name="v.child" item="s">
+		              <li><a <if condition="$s[price] == $demand[rank]">class="selected"</if>href="{:U('Photo/index',array('genre'=>$demand['genre'],'format'=>$demand['format'],'rank'=>$s['price'],'size'=>$demand['size']))}">{$s.name}</a></li>
+		            </foreach>
+	          	</ul>
+          	</div>
+          </if>
+        </foreach>
+        <div class="both"></div>
+    </div>
+</div>
+
+  <section class="contents" style="min-height:500px;">
+
+    <ul id="main">
+
+      <volist name="photo" id="v" offset="0" length='12'>
+
+        <li style="opacity: 0;">
+
+          <div class="details">
+
+            <p class="title">{$v.photo_title}
+
+            </p>
+
+            <p class="rests">{$v.photo_size}
+
+            <if condition="$v['collect']">
+
+                <a class="cancel" href="javascript:void(0)" onclick="collect({$v.id},1,this,1)"><i class="iconfont">&#xe619;</i>取消</a>
+
+              <else/>
+
+                <a href="javascript:void(0)" onclick="collect({$v.id},1,this,1)"><i class="iconfont">&#xe61a;</i>收藏</a>
+
+              </if>
+
+              <if condition="$v['praise']">
+
+                <a class="cancel" href="javascript:void(0)" onclick="collect({$v.id},2,this,1)"><i class="icon iconfont">&#xe61b;</i>取消</a>
+
+              <else/>
+
+                <a href="javascript:void(0)" onclick="collect({$v.id},2,this,1)"><i class="icon iconfont">&#xe618;</i>赞</a>
+
+              </if>
+
+            </p>
+
+          </div>
+
+          <div class="img">
+
+            <a href="javascript:void(0)" onclick="photo_page('{$v.id}')">
+
+              <img src="{$v.photo_img}?imageView2/2/w/340" class="LoadComplete">
+
+            </a>
+
+          </div>
+
+          <div class="text">
+
+            <div class="ption">
+
+              <p>{$v.photo_description}</p>
+
+              <a href="{:U('Photo/page',array('id'=>$v['id']))}" target="_blank">详情<i class="icon iconfont">&#xe60a;</i></a>
+
+              <div class="both"></div>
+
+            </div>
+
+          </div>
+
+          
+
+        </li>
+
+      </volist>
+    </ul>
+
+  </section>
+  <div class="both"></div>
+  <div id="page">
+  	{$page}
+  </div>
+
+<include file='Public:footer'/>
+
+<include file='Public:scripts'/>
+
+<script>
+var jsondata = <?php echo json_encode($photo); ?>;
+</script>
+
+<script src="__MODULE__/js/photo_index.js" charset="utf-8"></script>
+<script>
+$(window).scroll(function () {
+            var menu_top = $('#bander_photo').offset().top;			
+				if ($(window).scrollTop() >= 255) {
+					$("#bander_photo").css("top",50);
+					$("#bander_photo").css("position","fixed");
+					$('#bander_photo').addClass('menuFixed')  
+				}	
+				if($(window).scrollTop() < 255) {  
+					$("#bander_photo").css("position","relative"); 
+					$("#bander_photo").css("top",255);
+					$('#bander_photo').removeClass('menuFixed')	
+				}
+});
+$(document).ready(function(){
+	$("#bander_photo .box .screen a").hover(function(){
+	  	var id = $(this).attr("data-id");
+	  	$("#bander_photo .elects .elect").hide();
+	  	$("#"+id).show();
+	});
+  	$("#bander_photo .elects .elect").mouseleave(function(){
+	  	$("#bander_photo .elects .elect").hide();
+	});
+});
+</script>
+</body> 
+
+</html> 

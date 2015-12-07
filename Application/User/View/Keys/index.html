@@ -1,0 +1,81 @@
+<!doctype html> 
+<html lang="zh-cn"> 
+<head> 
+	<title>冬青|素材站。</title>
+  <meta name="keywords" content="分享创意，助力数码师。">
+  <meta name="description" content="冬青|数码站，免费下载：婚纱摄影模板、儿童摄影模板、写真摄影模板。">
+  <include file='Public:head'/>
+</head> 
+<body style="background-color:#f1f1f1">
+<include file='Public:nav'/>
+  <div id="modify">
+    <div class="title">
+      <p>密码更改</p>
+    </div>
+    <ul class="password">
+      <form method="get" action="{:U('User/addKeys')}" class="register">
+      <li>
+        <div class="name"><b>密 钥 :</b></div>
+        <div class="cont">
+          <input type="text" class="text" name="secret" id="secret">
+        </div>
+        <div class="both"></div>
+      </li>
+      <li>
+        <button type="submit">提 交</button>
+      </li>
+      </form>
+    </ul>
+  </div>
+<include file='Public:footer'/>
+<include file='Public:scripts'/>
+<script language=javascript>
+
+    // JavaScript 判断表单
+  $(document).ready(function(){
+      
+    $("form :input").blur(function(){
+      $(this).parent().find(".error").remove();
+      //密码
+      if ($(this).is("#secret")){
+        if (this.value=="" || this.value.length !=18){
+          
+          $(this).parent().append("<p class='error error_suer'>密钥有误请重新输入</p>");
+          }else{
+            $(this).next().remove();
+          }
+      }
+    }); 
+    //注册
+    $("form.register").submit( function () {
+      
+      $("form :input").trigger("blur");
+      
+      var hdw3 = $(".error").length; 
+      
+      if (hdw3){
+        return false;
+        
+        }else{;
+            //密钥
+            var secret = $("#secret").val();
+            //     //提交地址
+            $.get(this.action,
+                //提交内容
+            {secret:secret},
+                //返回的内容
+            function(data){
+                if(data['status']){
+                  window.location.href=data['url'];
+                }else{
+                  mistake(data['info']);
+                }
+            });
+            return false;
+        } 
+  
+    });
+  }); 
+</script>
+</body> 
+</html> 

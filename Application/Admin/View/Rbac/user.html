@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+  <head>
+
+    <include file='Public:head'/>
+
+  </head>
+
+  <body style="padding:20px;">
+
+      <div class="content-title">
+        <div class="col-md-8">
+          <div class="btn-group">
+            <a class="btn btn-default" href="{:U('Rbac/addUser')}" role="button">添加用户</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="输入用户的昵称">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Go!</button>
+            </span>
+          </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+      </div>
+
+
+
+      <div class="content-table">
+
+        <table class="table table-hover">
+
+          <thead>
+
+            <tr>
+
+              <th>ID</th>
+
+              <th>用户名</th>
+
+              <th>用户昵称</th>
+
+              <th>上一次登陆时间</th>
+
+              <th>上一次登陆IP</th>
+
+              <th>用户权限</th>
+
+              <!-- <th>截止时间</th> -->
+
+              <th>操作</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <foreach name="user" item="v">
+
+              <tr>
+
+                <th>{$v.id}</th>
+
+                <th>{$v.user_name}</th>
+
+                <th>{$v.user_nicename}</th>
+
+                <th>{$v.last_login_time}</th>
+
+                <th>{$v.last_login_ip}</th>
+
+                <th>
+
+                    <if condition="$v['user_name'] eq C('RBAC_SUPERADMIN')">
+
+                      超级管理员
+
+                    <else/>
+
+                      <foreach name="v.role" item="value">
+
+                        <p>{$value.name}({$value.remark})</p>
+
+                      </foreach>
+
+                    </if>
+
+                </th>
+
+                <!-- <th>
+
+                    <if condition="$v['status']==1">
+
+                      {$v.deadline}
+
+                    <else/>
+
+                      非付费会员
+
+                    </if>
+
+                </th> -->
+
+                <th width="220">
+
+                <if condition="$v['user_state']">
+
+                  <a class="btn btn-default" href="{:U('Rbac/state',array('id'=>$v['id'],'user_state'=>0))}" role="button">锁定</a>
+
+                <else/>
+
+                  <a class="btn btn-success" href="{:U('Rbac/state',array('id'=>$v['id'],'user_state'=>1))}" role="button">解锁</a>
+
+                </if>
+                </th>
+
+              </tr>
+
+            </foreach>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+
+
+    
+
+  </body>
+
+  <include file='Public:script'/>
+
+</html>

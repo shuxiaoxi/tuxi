@@ -1,0 +1,100 @@
+<!doctype html> 
+
+<html lang="zh-cn"> 
+
+<head> 
+
+	<title>冬青|素材站。</title>
+
+  <meta name="keywords" content="分享创意，助力数码师。">
+
+  <meta name="description" content="冬青|数码站，免费下载：婚纱摄影模板、儿童摄影模板、写真摄影模板。">
+
+  <include file='Public:head'/>
+
+</head> 
+
+<body>
+
+<include file='Public:nav'/>
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="">
+
+        <div class="title"><b>登陆</b><a href="{:U('login/index')}">立即注册</a></div>
+        <div class="box">
+        <form  action="{:U('Login/debark')}" method="post" class="login">
+
+
+
+            <div class="control-group">
+
+              <label for="mobile">账号</label>
+
+              <div class="controls">
+
+                <input type="username" name="username" id="login_username" placeholder="请输入用户名或者邮箱">
+
+              </div>
+
+            </div>
+
+            <div class="control-group">
+
+              <label for="password">密码</label>
+
+              <div class="controls">
+
+                <input type="password" name="password" id="login_password" placeholder="请输入密码">
+              </div>
+
+            </div>
+
+            
+            <div class="submit">
+
+              <button type="submit" id="submit">提交</button>
+
+            </div>
+
+            <div class="submit">
+
+              <a href="{:U('Mali/forgot')}">忘记密码</a>
+
+            </div>
+
+        </form>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="unite">
+
+      <!-- <div class="title"><b>或使用以下帐号直接登录</b></div> -->
+
+      <ul class="unite">
+
+        <!-- <li><img src="__TMPL__Public/images/unite_microblog.jpg"></li>
+
+        <li><img src="__TMPL__Public/images/unite_qq.jpg"></li>
+
+        <li><img src="__TMPL__Public/images/unite_wechat.jpg"></li> -->
+
+      </ul>
+
+    </div>
+
+    <div class="both"></div>
+
+  </div>
+
+<include file='Public:footer'/>
+
+<include file='Public:scripts'/>
+</body> 
+
+</html> 

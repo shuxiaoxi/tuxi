@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <include file='Public:head'/>
+  </head>
+  <body style="padding:20px;">
+      <div class="content-title">
+        <div class="col-md-8">
+          <div class="btn-group">
+            <a class="btn btn-default" href="javascript:history.go(-1);" role="button">返回</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="输入用户的昵称">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Go!</button>
+            </span>
+          </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+      </div>
+
+      <div class="content-table">
+        <table class="table table-hover">
+          <tbody>
+            <form action="{:U('Rbac/setAccess')}" method="post">
+            <foreach name="node" item="app">
+              <div class="node">
+                <div class="app">
+                  <b>{$app.title}</b>
+                  <input type="checkbox" name="access[]" value="{$app.id}_1" onclick="mistake(this)" <if condition="$app['access']">checked='checked'</if> />
+
+                </div>
+                <foreach name="app['child']" item="action">
+                  <dl>
+                    <dt>
+                      <strong>{$action.title}</strong>
+                      <input type="checkbox" name="access[]" value="{$action.id}_2" onclick="mistake(this)"<if condition="$action['access']">checked='checked'</if> />
+                    </dt>
+                    <foreach name="action['child']" item="method">
+                      <dd>
+                        {$method.title}
+                        <input type="checkbox" name="access[]" value="{$method.id}_3" <if condition="$method['access']">checked='checked'</if>/>
+                      </dd>
+                    </foreach>
+                    <div class="both"></div>
+                  </dl>
+                </foreach>
+              </div>
+            </foreach>
+            <input type="hidden" name="rid" value="{$rid}">
+            <input class="btn btn-success" type="submit" value="保存修改">
+            </form>
+          </tbody>
+        </table>
+      </div>
+
+    
+  </body>
+  <include file='Public:script'/>
+  <script>
+      function mistake(own){
+        if($(own).is(':checked')) {
+              $(own).parent().parent().find('input').prop('checked','checked');
+          }else{
+              $(own).parent().parent().find('input').removeAttr('checked');
+          }
+      }
+  </script>
+</html>

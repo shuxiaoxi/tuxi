@@ -1,0 +1,162 @@
+<!doctype html> 
+
+<html lang="zh-cn"> 
+
+<head> 
+
+	<title>冬青|素材站。</title>
+
+  <meta name="keywords" content="分享创意，助力数码师。">
+
+  <meta name="description" content="冬青|数码站，免费下载：婚纱摄影模板、儿童摄影模板、写真摄影模板。">
+
+  <include file='Public:head'/>
+
+</head> 
+
+<body style="background-color:#f1f1f1">
+
+<include file='Public:nav'/>
+
+  <div id="user">
+
+    <div class="func">
+
+      <div class="person">
+
+        <div class="avatar">
+
+          <div class="img">
+
+            <?php
+
+            // if($data['avatar']){
+
+            //   echo "<img src='__QINIU__".$data['avatar']."?imageView2/2/w/80/h/80' id='head'>";
+
+            // }else{
+
+            //   echo "<img src='__MODULE__/image/test/name.jpg'>";
+
+            // }
+
+            ?>
+            <img src='{$_SESSION['avatar']}?imageView2/2/w/80/h/80'>
+
+          </div>
+
+          <div class="name">
+
+            <?php
+
+            // if($data['user_nicename']){
+
+            //   echo "<p>".$data['user_nicename']."</p>";
+
+            // }else{
+
+            //   echo "<p>".$data['user_name']."</p>";
+
+            // }
+
+            ?>
+            <p>{$_SESSION['nicename']}</p>
+
+
+          </div>
+
+        </div>
+
+        <ul>
+
+          <if condition="$data['status'] eq 0">
+            <li><a href="{:U('Keys/index')}">立即成为会员</a></li>
+          </if>
+      
+          <li><a href="{:U('Set/settings')}">账号设置</a></li>
+
+          <li><a href="{:U('Set/changepass')}">修改密码</a></li>
+
+          <li><a href="{:U('Dispose/logout')}">退出</a></li>
+
+        </ul>
+
+      </div>
+
+      <div class="collect">
+
+        <ul>
+
+          <if condition="$_GET['genre']==1">
+
+                <li class="one"><a href="{:U('Index/index',array('genre'=>1))}">我的收藏</a></li>
+
+          <else/>
+
+                <li><a href="{:U('Index/index',array('genre'=>1))}">我的收藏</a></li>
+
+          </if>
+
+          <if condition="$_GET['genre']==2">
+
+                <li class="one"><a href="{:U('Index/index',array('genre'=>2))}">我喜欢的</a></li>
+
+          <else/>
+
+                <li><a href="{:U('Index/index',array('genre'=>2))}">我喜欢的</a></li>
+
+          </if>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="oper">
+
+      <ul>
+
+        <foreach name="page" item="v">
+
+          <li>
+
+            <a target="_blank" href="{:U('Photo/page',array('id'=>$v['id']))}"><p class="img"><img src='{$v.photo_img}?imageView2/1/w/391/h/210'</p></a>
+
+          <div class="text">
+
+          <p class="bg">
+
+            <a href="javascript:void(0)" onclick="collect_user({$v.id},{$v.like_id},this)">取消</a>
+
+            <a target="_blank" href="{:U('Photo/page',array('id'=>$v['id']))}">查看</a>
+
+            <a target="_blank" href="{:U('Photo/download',array('id'=>$v[id]))}">下载</a>
+
+          </p>
+
+          <p>{$v.photo_title}</p>
+
+          </div>
+
+          </li>
+
+        </foreach>
+
+        <div class="both"></div>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+<include file='Public:footer'/>
+
+<include file='Public:scripts'/>
+
+<script src="__MODULE__/js/user.js" charset="utf-8"></script>
+
+</body> 
+
+</html> 

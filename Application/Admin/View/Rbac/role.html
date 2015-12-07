@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <include file='Public:head'/>
+  </head>
+  <body style="padding:20px;">
+      <div class="content-title">
+        <div class="col-md-8">
+          <div class="btn-group">
+            <a class="btn btn-default" href="{:U('Rbac/addRole')}" role="button">添加角色</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="输入用户的昵称">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Go!</button>
+            </span>
+          </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+      </div>
+
+      <div class="content-table">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>角色名称</th>
+              <th>角色描述</th>
+              <th>开启状态</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <foreach name="role" item="v">
+              <tr>
+                <th>{$v.id}</th>
+                <th>{$v.name}</th>
+                <th>{$v.remark}</th>
+                <th>
+                  <if condition='$v["status"]'>开启<else/>关闭</if>
+                  </th>
+                <th width="220">
+                <a class="btn btn-default" href="{:U('Rbac/access',array('rid'=>$v['id']))}" role="button">配置权限</a>
+                <a class="btn btn-default" href="{:U('Rbac/addRole',array('id'=>$v['id']))}" role="button">修改</a>
+                </th>
+              </tr>
+            </foreach>
+          </tbody>
+        </table>
+      </div>
+
+    
+  </body>
+  <include file='Public:script'/>
+</html>
